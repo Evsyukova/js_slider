@@ -1,0 +1,22 @@
+{
+      "rules": {
+          "semi": [2, "always"],
+          "quotes": [2, "single"],
+          "max-len": [
+              "error",
+              {
+                  "code": 120,
+                  "ignoreStrings": true,
+                  "ignoreComments": true,
+                  "ignoreTemplateLiterals": true
+              }
+          ]
+      },
+      "parserOptions": {
+          "ecmaVersion": 2021
+      },
+      "env": {
+          "es6": true
+      }
+  }
+  
