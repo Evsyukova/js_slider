@@ -11,17 +11,31 @@
 
 <body>
 
-  <ul id="slides" class="slides">
-    <li class="slide active">Slide 1</li>
-    <li class="slide">Slide 2</li>
-    <li class="slide">Slide 3</li>
-    <li class="slide">Slide 4</li>
-    <li class="slide">Slide 5</li>
-  </ul>
+  <div id="carousel" class="carousel">
 
-  <button class="controls" id="pause">Pause</button>
-  <button class="controls" id="previous">Previous</button>
-  <button class="controls" id="next">Next</button>
+    <div id="slides-container" class="slides">
+      <div class="slide active">Slide 1</div>
+      <div class="slide">Slide 2</div>
+      <div class="slide">Slide 3</div>
+      <div class="slide">Slide 4</div>
+      <div class="slide">Slide 5</div>
+    </div>
+
+    <div id="indicators-container" class="indicators">
+      <div class="indicator active" data-slide-to="0"></div>
+      <div class="indicator" data-slide-to="1"></div>
+      <div class="indicator" data-slide-to="2"></div>
+      <div class="indicator" data-slide-to="3"></div>
+      <div class="indicator" data-slide-to="4"></div>
+    </div>
+
+    <div id="controls-container" class="controls">
+      <span class="control control-pause" id="pause-btn">Pause</span>
+      <span class="control control-prev" id="prev-btn">Previous</span>
+      <span class="control control-next" id="next-btn">Next</span>
+    </div>
+
+  </div>
 
   <script src="assets/js/main.js"></script>
 </body>

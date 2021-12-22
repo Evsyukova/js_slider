@@ -1,7 +1,12 @@
-/*
-essential styles:
-these make the slideshow work
-*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 .slides {
   position: relative;
@@ -19,6 +24,8 @@ these make the slideshow work
   height: 100%;
   opacity: 0;
   z-index: -99;
+  -webkit-transition: opacity 0.25s;
+  -o-transition: opacity 0.25s;
   transition: opacity 0.25s;
 }
 
@@ -27,15 +34,11 @@ these make the slideshow work
   z-index: 2;
 }
 
-/*
-non-essential styles:
-just for appearance; change whatever you want
-*/
-
 .slide {
   font-size: 40px;
   padding: 40px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   background: #333;
   color: #fff;
 }
@@ -58,4 +61,50 @@ just for appearance; change whatever you want
 
 .slide:nth-of-type(5) {
   background: purple;
+}
+
+/* custom CSS */
+.carousel {
+  margin: 1em;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+}
+
+.slides {
+  grid-column: 1/span 2;
+}
+
+.indicators,
+.controls {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  gap: 1em;
+}
+
+.indicator,
+.control {
+  background-color: gray;
+  cursor: pointer;
+  padding: 1em;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.indicator.active,
+.control.active {
+  background-color: red;
 }
