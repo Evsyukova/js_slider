@@ -13,6 +13,8 @@
   const CODE_LEFT_ARROW = "ArrowLeft";
   const CODE_RIGHT_ARROW = "ArrowRight";
   const CODE_SPACE = "Space";
+  const FA_PAUSE = '<i class="fas fa-pause-circle"></i>';
+  const FA_PLAY = '<i class="fas fa-play-circle"></i>';
 
   let currentSlide = 0;
   let timerID = null;
@@ -41,14 +43,14 @@
   function pause() {
     if (isPlaying) {
       clearInterval(timerID);
-      pauseButton.innerHTML = 'Play';
+      pauseButton.innerHTML = FA_PLAY;
       isPlaying = false;
     }
   }
 
   function play() {
     timerID = setInterval(gotoNext, interval);
-    pauseButton.innerHTML = 'Pause';
+    pauseButton.innerHTML = FA_PAUSE;
     isPlaying = true;
   }
 
@@ -88,15 +90,22 @@
     if (swipeStartX - swipeEndX > 100) next();
   }
 
-  pauseButton.addEventListener('click', pausePlay);
-  previousButton.addEventListener('click', prev);
-  nextButton.addEventListener('click', next);
-  indicatorsContainer.addEventListener('click', indacate);
-  container.addEventListener('touchstart', swipeStart);
-  container.addEventListener('touchend', swipeEnd);
-  document.addEventListener('keydown', pressKey)
+  function initListeners() {
+    pauseButton.addEventListener('click', pausePlay);
+    previousButton.addEventListener('click', prev);
+    nextButton.addEventListener('click', next);
+    indicatorsContainer.addEventListener('click', indacate);
+    container.addEventListener('touchstart', swipeStart);
+    container.addEventListener('touchend', swipeEnd);
+    document.addEventListener('keydown', pressKey);
+  }
 
-  timerID = setInterval(gotoNext, interval);
+  function init() {
+    initListeners();
+    timerID = setInterval(gotoNext, interval);
+  }
+
+  init();
 
 }());
 
