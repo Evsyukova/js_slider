@@ -8,14 +8,14 @@ class SwipeCarousel extends Carousel {
     this.container.addEventListener('touchend', this._swipeEnd.bind(this), { passive: true });
   }
 
+  _swipeStart(e) {
+    this.swipeStartX = e.changedTouches[0].pageX;
+  }
+
   _swipeEnd(e) {
     this.swipeEndX = e.changedTouches[0].pageX;
     if (this.swipeStartX - this.swipeEndX < -100) this.prev();
     if (this.swipeStartX - this.swipeEndX > 100) this.next();
-  }
-
-  _swipeStart(e) {
-    this.swipeStartX = e.changedTouches[0].pageX;
   }
 
 }
