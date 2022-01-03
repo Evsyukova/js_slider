@@ -108,3 +108,8 @@ body {
 .control.active {
   background-color: red;
 }
+
+.control-pause > span {
+  opacity: 0;
+  position: absolute;
+}
