@@ -4,7 +4,7 @@ import Carousel from './carousel.js';
 const carousel = new Carousel({
   containerID: '#myCarousel',
   slideID: '.item',
-  interval: 1000,
+  interval: 2000,
   // isPlaying: false
 });
 
