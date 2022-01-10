@@ -1,7 +1,7 @@
 import SwipeCarousel from './swipe-carousel.js';
 import Carousel from './carousel.js';
 
-const carousel = new Carousel({
+const carousel = new SwipeCarousel({
   containerID: '#myCarousel',
   slideID: '.item',
   interval: 2000,
